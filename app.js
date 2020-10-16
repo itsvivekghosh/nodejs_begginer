@@ -1,4 +1,8 @@
-const tutorial = require("./tutorial");
-console.log(tutorial.PI);
-console.log(new tutorial.SomeMathObject());
-console.log(tutorial.sum(90, 70));
+const EventEmitter = require("events");
+const eventEmmiter = new EventEmitter();
+
+eventEmmiter.on("tutorial", () => {
+  console.log("Tutorial Event has occurred");
+});
+
+eventEmmiter.emit("tutorial");
